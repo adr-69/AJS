@@ -111,25 +111,4 @@ function $akr_a(href, message) {
     outputDiv.appendChild(newLink);
 }
 
-// RESPONSE FILE //
-function LoadAndRunCode() {
-    fetch('Holy.js')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(code => {
-            try {
-                eval(code);
-            } catch (error) {
-                console.error('Error in evaluating the code: ', error);
-            }
-        })
-        .catch(error => {
-            console.warn('Error in fetching the file or executing code: ', error);
-        });
-}
 
-window.onload = LoadAndRunCode;
