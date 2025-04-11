@@ -1,4 +1,10 @@
-// CURRENT VERSION: 1.2.0
+/*  
+  AkiraJS - A simplified JavaScript version  
+  Created by: Adrian Martin  
+  Version: 1.2.0  
+  License: MIT  
+  Release Date: April 11, 2025  
+*/
 
 // CONSOLE //
 function console_akr(message) {
