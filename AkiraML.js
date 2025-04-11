@@ -4,7 +4,7 @@ function $console_akr(message) {
 }
 
 // HTML HEADINGS H1 - H6 //
-function $akr_h(level = 0, message) {
+function $akrh(level = 0, message) {
     const outputDiv = document.getElementById('output');
     
     let element;
@@ -17,7 +17,7 @@ function $akr_h(level = 0, message) {
     outputDiv.appendChild(element);
 }
 // PARAGRAPH //
-function $akr_p(message) {
+function $akrp(message) {
     const outputDiv = document.getElementById('output');
     
     let paragraph;
@@ -30,10 +30,10 @@ function $akr_p(message) {
     outputDiv.appendChild(paragraph);
 }
 // VARIABLE //
-function $akr_(num) {
+function $akr(num) {
     return num * num;
 }
-function $akr_(message) {
+function $akr(message) {
     const outputDiv = document.getElementById('output');
     
     let variable;
@@ -47,7 +47,7 @@ function $akr_(message) {
     return message * message;
 }
 // DOCUMENT GET ELEMENT BY ID //
-function $doc_getEleById_(str) {
+function $doc_getEleById(str) {
     const outputDiv = document.getElementById('output');
     if (!outputDiv) return null;
     
@@ -63,11 +63,11 @@ function $doc_getEleById_(str) {
     }
 }
 // CLASS //
-function $akr_(message, className = "") {
+function $akr(message, className = "") {
     createElement(message, className);
 }
 
-function $akrClass_(className) {
+function $akrClass(className) {
     return function(message) {
         createElement(message, className);
     };
@@ -91,7 +91,7 @@ function createElement(message, className) {
     outputDiv.appendChild(newElement);
 }
 // LINK // 
-function $akr_a(href, message) {
+function $akra(href, message) {
     const outputDiv = document.getElementById('output');
     if (!outputDiv) {
         console.error("Output div not found.");
@@ -110,5 +110,4 @@ function $akr_a(href, message) {
     
     outputDiv.appendChild(newLink);
 }
-
 
