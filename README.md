@@ -44,3 +44,5 @@ Basic Document Get Element By ID (not fully functional in this version)
 📢 Stay Updated!
 
 More updates are coming soon! Stay tuned for new features and better performance.
+👨‍💻 Creator  
+AkiraJS was created and developed by **Adrian Martin**.
