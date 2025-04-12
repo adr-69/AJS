@@ -1,11 +1,14 @@
 /*  
   AkiraJS - A simplified JavaScript version  
   Created by: Adrian Martin  
-  Version: 1.2.0  
+  Version: 1.3.0 April 12, 2025 
   License: MIT  
-  Release Date: April 11, 2025  
+  Release Date: April 10, 2025
 */
 
+
+
+// VERSION: 1.0.0  & VERSION: 1.2.0 FIXED // 
 // CONSOLE //
 function console_akr(message) {
     console.log(message);
@@ -52,4 +55,31 @@ function while_loop_wrt(message, times) {
 // DOCUMENT WRITE //
 function doc_wrt(message) {
     document.body.innerHTML += message + "<br>";
+}
+// ===== VERSION: 1.3.0 ===== //
+// SINGLE CLASS //
+function SClass_wrt(className, message = '') {
+    const newElement = document.createElement('div');
+    newElement.className = className;
+    if (message) {
+        newElement.innerText = message;
+    }
+    document.body.appendChild(newElement);
+    return newElement;
+}
+// HTML SYNTAX //
+function MAKE_HTML_AREA(code) {
+    const container = document.createElement('div');
+    container.innerHTML = code;
+    document.body.appendChild(container);
+}
+// HR - HORIZONTAL RULE //
+function hr() {
+    const line = document.createElement('hr');
+    document.body.appendChild(line);
+}
+// BR - LINE BREAK
+function br() {
+    const linebreak = document.createElement('br');
+    document.body.appendChild(linebreak);
 }
