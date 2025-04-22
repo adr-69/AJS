@@ -1,14 +1,19 @@
 // ============================== //
 /*
 |    Akira.JS
-|    Latest Version: v1.6.2
+|    Latest Version: v1.7.2 APRIL 22, 2025
 |    License: MIT
 |    Relase Date: APRIL 10, 2025
 |    Created By: Adrian Martin
 */
 // ============================== //
-function IMPORT_AKIRA_JS_V1_6_1(str) {
-    console.table([{ name: "Akira.JS", version: "1.6.1" }]);
+function IMPORT_AKIRA(str) {
+    console.table([{ name: "Akira.JS", version: "1.7.2" }]);
+}
+function AKIRA_TITLE(title) {
+    const titleElement = document.createElement('title');
+    titleElement.innerText = title;
+    document.head.appendChild(titleElement);
 }
 // CONSOLE & INCL //
 function inconsole(message) {
