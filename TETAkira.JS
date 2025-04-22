@@ -1,13 +1,13 @@
 // ============================== //
 /*
 |    Akira.JS
-|    Latest Version: v1.7.2 APRIL 22, 2025
+|    Latest Version: v2.8.2
 |    License: MIT
 |    Relase Date: APRIL 10, 2025
 |    Created By: Adrian Martin
 */
 // ============================== //
-function IMPORT_AKIRA(str) {
+function IMPORT_AKIRA(callback) {
     console.table([{ name: "Akira.JS", version: "1.7.2" }]);
 }
 function AKIRA_TITLE(title) {
@@ -15,12 +15,21 @@ function AKIRA_TITLE(title) {
     titleElement.innerText = title;
     document.head.appendChild(titleElement);
 }
-// CONSOLE & INCL //
+// INCONSOLE & INCL //
 function inconsole(message) {
     console.log(message);
 }
 function incl(message) {
     console.log(message);
+}
+// VARIABLE //
+function wrt(num) {
+    return num * num;
+}
+function wrt(message) {
+    console.log(message);
+    document.body.innerHTML += message + "<br>";
+    return typeof message === "number" ? message * message : "Invalid input";
 }
 // FOR LOOP CONSOLE & H1 - H6 //
 function ForLoop_inconsole(message, times) {
@@ -144,20 +153,11 @@ function WhileLoop_h6(message, times) {
         i++;
     }
 }
-// VARIABLE //
-function wrt(num) {
-    return num * num;
-}
-function wrt(message) {
-    console.log(message);
-    document.body.innerHTML += message + "<br>";
-    return typeof message === "number" ? message * message : "Invalid input";
-}
 // DOCUMENT GET ELEMENT BY ID //
 function docGetId(id) {
     return document.getElementById(id);
 }
-// TYPEWRITTER TEXT EFFECT H1 - H6 //
+// TEXT EFFECT H1 - H6 //
 function TypewritterText_h1(text, speed = 50) {
     let i = 0;
     const el = document.createElement('h1');
@@ -248,6 +248,11 @@ function HTML(code) {
     container.innerHTML = code;
     document.body.appendChild(container);
 }
+
+// ============================== //
+// ===== MORE ON HTML SYNTAX ===== //
+// ============================== //
+
 // HEADINGS H1 - H6 //
 function h1(message) {
     const el = document.createElement('h1');
@@ -308,4 +313,33 @@ function p(message) {
     const el = document.createElement('p');
     el.innerText = message;
     document.body.appendChild(el);
+}
+// DIV CLASS //
+function CLASS(className, callback) {
+    const container = document.createElement("div");
+    container.className = className;
+    window._AkiraTarget = container;
+    if (typeof callback === 'function') {
+        callback();
+    }
+    document.body.appendChild(container);
+    delete window._AkiraTarget;
+}
+// NAV BAR //
+function a(href, text) {
+    return { href, text };
+}
+function nav(className, linksArray) {
+    const navEl = document.createElement("nav");
+    navEl.className = className;
+    
+    linksArray.forEach(link => {
+        const linkEl = document.createElement("a");
+        linkEl.href = link.href;
+        linkEl.innerText = link.text;
+        linkEl.style.marginRight = "15px";
+        navEl.appendChild(linkEl);
+    });
+    
+    document.body.appendChild(navEl);
 }
