@@ -1,7 +1,7 @@
 // ============================== //
 /*
 |    Akira.JS
-|    Latest Version: v1.6.1
+|    Latest Version: v1.6.2
 |    License: MIT
 |    Relase Date: APRIL 10, 2025
 |    Created By: Adrian Martin
