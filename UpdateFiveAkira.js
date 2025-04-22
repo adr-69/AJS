@@ -240,3 +240,64 @@ function HTML(code) {
     container.innerHTML = code;
     document.body.appendChild(container);
 }
+// HEADINGS H1 - H6 //
+function h1(message) {
+    const el = document.createElement('h1');
+    el.innerText = message;
+    document.body.appendChild(el);
+}
+function h2(message) {
+    const el = document.createElement('h3');
+    el.innerText = message;
+    document.body.appendChild(el);
+}
+function h3(message) {
+    const el = document.createElement('h3');
+    el.innerText = message;
+    document.body.appendChild(el);
+}
+function h4(message) {
+    const el = document.createElement('h4');
+    el.innerText = message;
+    document.body.appendChild(el);
+}
+function h5(message) {
+    const el = document.createElement('h5');
+    el.innerText = message;
+    document.body.appendChild(el);
+}
+function h6(message) {
+    const el = document.createElement('h6');
+    el.innerText = message;
+    document.body.appendChild(el);
+}
+//SINGLE CLASS //
+function SClass(className, message = '') {
+    const newElement = document.createElement('div');
+    newElement.className = className;
+    if (message) {
+        newElement.innerText = message;
+    }
+    document.body.appendChild(newElement);
+    return newElement;
+}
+// STYLE  CSS//
+function STYLE(className, styles) {
+    const css = Object.entries(styles)
+        .map(([k, v]) => `${k}: ${v};`).join('; ');
+    
+    let styleSheet = document.querySelector("style[data-akira-style]");
+    if (!styleSheet) {
+        styleSheet = document.createElement("style");
+        styleSheet.setAttribute("data-akira-style", "true");
+        document.head.appendChild(styleSheet);
+    }
+    
+    styleSheet.innerHTML += `\n.${className} { ${css} }`;
+}
+// PARAGRAPH "P" //
+function p(message) {
+    const el = document.createElement('p');
+    el.innerText = message;
+    document.body.appendChild(el);
+}
