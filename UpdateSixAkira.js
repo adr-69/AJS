@@ -1,7 +1,7 @@
 // ============================== //
 /*
 |    Akira.JS
-|    Latest Version: v1.5.0
+|    Latest Version: v1.6.1
 |    License: MIT
 |    Relase Date: APRIL 10, 2025
 |    Created By: Adrian Martin
@@ -282,18 +282,18 @@ function SClass(className, message = '') {
     return newElement;
 }
 // STYLE  CSS//
-function STYLE(className, styles) {
+function $Akira_CSS(className, styles) {
     const css = Object.entries(styles)
-        .map(([k, v]) => `${k}: ${v};`).join('; ');
+        .map(([key, value]) => {
+            // Convert camelCase to kebab-case for proper CSS syntax
+            const kebabKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
+            return `${kebabKey}: ${value};`;
+        })
+        .join(' ');
     
-    let styleSheet = document.querySelector("style[data-akira-style]");
-    if (!styleSheet) {
-        styleSheet = document.createElement("style");
-        styleSheet.setAttribute("data-akira-style", "true");
-        document.head.appendChild(styleSheet);
-    }
-    
-    styleSheet.innerHTML += `\n.${className} { ${css} }`;
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = `.${className} { ${css} }`;
+    document.head.appendChild(styleTag);
 }
 // PARAGRAPH "P" //
 function p(message) {
