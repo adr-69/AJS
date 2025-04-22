@@ -7,7 +7,10 @@
 |    Created By: Adrian Martin
 */
 // ============================== //
-
+function IMPORT_AKIRA_JS_V1_6_1(str) {
+    console.table([{ name: "Akira.JS", version: "1.6.1" }]);
+}
+// CONSOLE & INCL //
 function inconsole(message) {
     console.log(message);
 }
