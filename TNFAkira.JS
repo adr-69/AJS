@@ -1,7 +1,7 @@
 // ============================== //
 /*
 |    Akira.JS
-|    Latest Version: v2.9.3 (TNTH) APRIL 24, 2025
+|    Latest Version: v2.9.4 (TNF) APRIL 24, 2025
 |    License: MIT
 |    Relase Date: APRIL 10, 2025
 |    Created By: Adrian Martin
@@ -338,4 +338,20 @@ function SClass(className, message = '') {
     }
     document.body.appendChild(newElement);
     return newElement;
+}
+function $Akira_CSS(selector, styles) {
+    if (typeof selector !== 'string' || selector.trim() === '') return;
+    const css = Object.entries(styles)
+        .map(([key, value]) => {
+            const kebabKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
+            return `${kebabKey}: ${value};`;
+        })
+        .join(' ');
+    const safeId = 'akira-style-' + btoa(unescape(encodeURIComponent(selector))).replace(/=/g, '');
+    const existing = document.getElementById(safeId);
+    if (existing) existing.remove();
+    const styleTag = document.createElement('style');
+    styleTag.id = safeId;
+    styleTag.innerHTML = `${selector} { ${css} }`;
+    document.head.appendChild(styleTag);
 }
